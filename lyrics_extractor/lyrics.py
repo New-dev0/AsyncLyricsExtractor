@@ -136,7 +136,7 @@ class SongLyrics:
         self.GCS_API_KEY = gcs_api_key
         self.GCS_ENGINE_ID = gcs_engine_id
 
-    def __handle_search_request(self, song_name):
+    async def __handle_search_request(self, song_name):
         url = "https://www.googleapis.com/customsearch/v1/siterestrict"
         params = {
             'key': self.GCS_API_KEY,
