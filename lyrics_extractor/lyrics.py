@@ -26,8 +26,7 @@ class _ScraperFactory:
         if not extract:
             return None
 
-        lyrics = (extract[0].get_text()).replace('<br>', '\n').strip()
-        return lyrics
+        return (extract[0].get_text()).replace('<br>', '\n').strip()
 
     def _genius_scraper_method_2(self):
         all_extracts = self.source_code.select(
@@ -66,9 +65,10 @@ class _ScraperFactory:
         if not extract:
             return None
 
-        lyrics = ''
-        for i in range(len(extract)):
-            lyrics += extract[i].get_text() + self.PARAGRAPH_BREAK
+        lyrics = ''.join(
+            extract[i].get_text() + self.PARAGRAPH_BREAK
+            for i in range(len(extract))
+        )
 
         lyrics = lyrics.replace('<br>', '\n').strip()
         self._update_title(self.title[:-13])
@@ -79,9 +79,10 @@ class _ScraperFactory:
         if not extract:
             return None
 
-        lyrics = ''
-        for i in range(len(extract)):
-            lyrics += extract[i].get_text().strip() + self.PARAGRAPH_BREAK
+        lyrics = ''.join(
+            extract[i].get_text().strip() + self.PARAGRAPH_BREAK
+            for i in range(len(extract))
+        )
 
         lyrics = lyrics.replace('<br>', '\n').strip()
         return lyrics
@@ -91,11 +92,8 @@ class _ScraperFactory:
         if not extract:
             return None
 
-        lyrics = ''
-        for i in range(len(extract)):
-            lyrics += extract[i].get_text(separator="\n").strip() + \
-                self.PARAGRAPH_BREAK
-
+        lyrics = ''.join(extract[i].get_text(separator="\n").strip() + \
+                self.PARAGRAPH_BREAK for i in range(len(extract)))
         return lyrics.strip()
 
     def lyricsmint_scraper(self):
@@ -104,11 +102,8 @@ class _ScraperFactory:
         if not extract:
             return None
 
-        lyrics = ''
-        for i in range(len(extract)):
-            lyrics += extract[i].get_text().strip() + \
-                self.PARAGRAPH_BREAK
-
+        lyrics = ''.join(extract[i].get_text().strip() + \
+                self.PARAGRAPH_BREAK for i in range(len(extract)))
         return lyrics.strip()
 
 
