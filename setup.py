@@ -9,12 +9,12 @@ README = (HERE / "README.md").read_text()
 
 # This call to setup() does all the work
 setup(
-    name="lyrics_extractor",
-    version="7.0.1",
-    description="Get Lyrics for any songs by just passing in the song name (spelled or misspelled) in less than 2 seconds using this awesome Python Library.",
+    name="asynclyrics_extractor",
+    version="0.0.7",
+    description="Get Lyrics for any songs with speed of async Python Library.",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/New-dev0/PyLyrics-Extractor",
+    url="https://github.com/New-dev0/AsyncLyricsExtractor",
     author="New-dev0",
     author_email="Newdev0@outlook.com",
     license="MIT",
@@ -28,11 +28,6 @@ setup(
     packages=["lyrics_extractor"],
     include_package_data=True,
     install_requires=["beautifulsoup4", "aiohttp"],
-    extras_require={
-        'dev': [
-            'python-dotenv',
-        ]
-    },
     entry_points={
         "console_scripts": [
             "lyrics_extractor=lyrics_extractor.lyrics:SongLyrics",
