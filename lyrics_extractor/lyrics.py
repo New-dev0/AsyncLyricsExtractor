@@ -147,7 +147,7 @@ class SongLyrics:
         async with ClientSession() as ses:
             response = await ses.get(url, params=params)
             data = await response.json()
-            if response.code != 200:
+            if response.status != 200:
                 raise LyricScraperException(data)
         return data
 
