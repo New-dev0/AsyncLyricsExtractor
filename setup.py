@@ -10,13 +10,13 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="lyrics_extractor",
-    version="3.0.1",
+    version="7.0.1",
     description="Get Lyrics for any songs by just passing in the song name (spelled or misspelled) in less than 2 seconds using this awesome Python Library.",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/Techcatchers/PyLyrics-Extractor",
-    author="Rishabh Agrawal",
-    author_email="rishabha.1999@gmail.com",
+    url="https://github.com/New-dev0/PyLyrics-Extractor",
+    author="New-dev0",
+    author_email="Newdev0@outlook.com",
     license="MIT",
     classifiers=[
         "License :: OSI Approved :: MIT License",
@@ -27,7 +27,7 @@ setup(
     ],
     packages=["lyrics_extractor"],
     include_package_data=True,
-    install_requires=["requests", "beautifulsoup4", "lxml"],
+    install_requires=["beautifulsoup4", "aiohttp"],
     extras_require={
         'dev': [
             'python-dotenv',
